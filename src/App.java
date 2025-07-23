@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         var scanner =  new Scanner(System.in);
 
-        System.out.print("\nInsira o valor inicial: ");
+        System.out.print("\n> Insira o valor inicial: ");
         double valorInicial = scanner.nextDouble();
         var account = new ContaBancaria(valorInicial);
         
@@ -37,29 +37,29 @@ public class App {
                         System.out.println("7. Sair");
                     System.out.println("===============================");
                 }
-                case 1 -> System.out.println("Saldo da conta: R$" + account.getSaldo() + "\n");
-                case 2 -> System.out.println("Limite da conta: R$" + account.getLimitCheque() + "\n");
+                case 1 -> System.out.println("> Saldo da conta: R$" + account.getSaldo() + "\n");
+                case 2 -> System.out.println("> Limite da conta: R$" + account.getLimitCheque() + "\n");
                 case 3 -> {
-                    System.out.print("Insira um valor para depositar: ");
+                    System.out.print("> Insira um valor para depositar: ");
                     double deposito = scanner.nextDouble();
                     account.depositarDinheiro(deposito);
                 }
                 case 4 -> {
-                    System.out.print("Insira o valor um valor para sacar: ");
+                    System.out.print("> Insira o valor um valor para sacar: ");
                     double sacar = scanner.nextDouble();
                     account.sacarDinheiro(sacar);
                 }
                 case 5 -> {
-                    System.out.print("Insira o valor do pagamento: ");
+                    System.out.print("> Insira o valor do pagamento: ");
                     double boleto = scanner.nextDouble();
                     account.pagarBoleto(boleto);
                 }
-                case 6 -> System.out.println("Está usando o cheque especial? " + account.isChequeEspecialAtivado() + "\n");
+                case 6 -> System.out.println("> Está usando o cheque especial? " + account.isChequeEspecialAtivado() + "\n");
                 case 7 -> {
                     break;
                 }
                 default -> {
-                    System.out.println("Operação Invalida"); 
+                    System.out.println("> Operação Invalida"); 
                 }
             }
         if(op == 7){
