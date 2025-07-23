@@ -67,5 +67,6 @@ public class App {
             break;
         }
         }
+        scanner.close();
     }
 }
